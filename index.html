@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth scroll-pt-21 md:scroll-pt-26" x-data>
+<head>
+	<meta charset="UTF-8">
+	<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Senior WordPress Developer | Custom Themes, WooCommerce & ACF Expert.">
+
+	<meta property="og:url" content="https://denstetsenko.com/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Preline">
+	<meta property="og:title" content="Denys Stetsenko">
+	<meta property="og:description" content="Senior WordPress Developer | Custom Themes, WooCommerce & ACF Expert.">
+
+	<title>Denys Stetsenko</title>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="./assets/favicon.png">
+
+	<!-- Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+	<link href="./src/output.css" rel="stylesheet">
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-H6ZQK70J7T"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-H6ZQK70J7T');
+	</script>
+</head>
+<body class="bg-gray-50/60">
+
+	<!-- Header -->
+	<header class="text-sm z-50 w-full px-3 sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap"
+					x-data="{ expanded: false }">
+		<nav class="relative max-w-3xl w-full bg-white border border-slate-200/70 rounded-3xl shadow-lg
+								flex flex-wrap items-center justify-between
+								mt-4 p-1 ps-3
+								md:py-0 mx-auto md:flex-nowrap md:ps-4">
+
+			<div class="flex items-center">
+				<a class="flex-none rounded-md text-xl inline-block font-semibold
+									focus:outline-hidden focus:opacity-80 text-gray-700" href="https://denstetsenko.com/" aria-label="Denys Stetsenko">
+					Denys Stetsenko
+				</a>
+			</div>
+
+			<div class="flex items-center gap-2 md:gap-3 md:order-4 md:ms-5">
+				<a class="w-full sm:w-auto whitespace-nowrap py-2 px-3
+									text-white text-xs font-medium rounded-full border border-transparent bg-slate-800
+									transition-colors duration-300 cursor-pointer
+									hover:bg-emerald-600 focus:outline-hidden focus:bg-emerald-700
+									md:text-sm md:px-4.5"
+					 href="#contact">
+					Get in touch
+				</a>
+
+				<div class="md:hidden">
+					<button type="button" class="flex justify-center items-center size-9.5
+																			 border border-slate-200 text-gray-500 rounded-full
+																			 transition-colors duration-300 cursor-pointer
+																			 hover:text-white hover:bg-emerald-600 hover:border-emerald-600
+																			 focus:text-white focus:outline-hidden focus:border-emerald-700 focus:bg-emerald-700"
+									aria-controls="navbar-menu" aria-label="Toggle navigation"
+									@click="expanded = ! expanded"
+									:aria-expanded="expanded.toString()">
+						<!-- Hamburger icon -->
+						<svg class="shrink-0 size-3.5 transition-all duration-300"
+								 :class="{'hidden': expanded, 'block': !expanded}"
+								 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<line x1="3" x2="21" y1="6" y2="6" />
+							<line x1="3" x2="21" y1="12" y2="12" />
+							<line x1="3" x2="21" y1="18" y2="18" />
+						</svg>
+						<!-- Close icon -->
+						<svg class="shrink-0 size-4 transition-all duration-300"
+								 :class="{'block': expanded, 'hidden': !expanded}"
+								 xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+							<path d="M18 6 6 18" />
+							<path d="m6 6 12 12" />
+						</svg>
+					</button>
+				</div>
+			</div>
+
+			<div id="navbar-menu"
+					 :class="{'block': expanded, 'hidden': !expanded}"
+					 class="overflow-hidden basis-full grow md:block">
+				<div class="font-medium flex flex-col
+										gap-2 pt-2 pb-3 mt-0
+										md:flex-row md:items-center md:justify-end md:gap-5 md:mt-0 md:py-0 md:ps-7 md:pb-0">
+					<a @click="expanded = false" class="py-0.5 md:py-3 md:px-1 text-gray-600 transition-colors duration-300 hover:text-emerald-600 focus:outline-hidden" href="#about">About</a>
+					<a @click="expanded = false" class="py-0.5 md:py-3 md:px-1 text-gray-600 transition-colors duration-300 hover:text-emerald-600 focus:outline-hidden" href="#skills">Skills</a>
+					<a @click="expanded = false" class="py-0.5 md:py-3 md:px-1 text-gray-600 transition-colors duration-300 hover:text-emerald-600 focus:outline-hidden" href="#clients">Clients</a>
+					<a @click="expanded = false" class="py-0.5 md:py-3 md:px-1 text-gray-600 transition-colors duration-300 hover:text-emerald-600 focus:outline-hidden" href="#testimonials">Testimonials</a>
+					<a @click="expanded = false" class="py-0.5 md:py-3 md:px-1 text-gray-600 transition-colors duration-300 hover:text-emerald-600 focus:outline-hidden" href="#work">Work</a>
+				</div>
+			</div>
+
+		</nav>
+	</header>
+
+	<main id="wrapper">
+
+		<div class="w-full max-w-3xl mx-auto pt-10 px-4
+								sm:px-6 lg:px-8">
+
+			<!-- Profile -->
+			<div id="about" class="flex items-center gap-x-3">
+				<div class="shrink-0">
+					<picture class="inline-block shrink-0 size-16 rounded-full border border-slate-300">
+						<source srcset="./assets/denys-ava-circle.webp" type="image/webp">
+						<img class="max-w-full h-auto" src="./assets/denys-ava-circle.png" alt="Denys Stetsenko">
+					</picture>
+				</div>
+
+				<div class="grow">
+					<h1 class="text-lg font-medium text-gray-800">
+						Denys Stetsenko
+					</h1>
+					<p class="text-sm text-gray-800">
+						Senior WordPress Developer | Custom Themes, WooCommerce & ACF Expert
+					</p>
+				</div>
+			</div>
+
+			<!-- About -->
+			<div class="mt-8">
+				<p class="text-sm text-gray-600">
+					Senior WordPress Developer with 12+ years of experience delivering websites for small businesses, startups, and agencies.
+					Expert in custom theme development, UI-driven builds, and advanced WordPress customization.
+				</p>
+				<p class="mt-3 text-sm text-gray-600">
+					As Head of Production and WordPress Team Lead, I managed teams and projects, handling scheduling, estimates, and coordination with account managers.
+					I’ve been responsible for hiring and mentoring developers, improving internal processes, and ensuring projects shipped on time and to specs.
+				</p>
+				<p class="mt-3 text-sm text-gray-600">
+					Since 2017, I’ve worked independently, delivering end-to-end WordPress solutions for clients across different industries.
+					My work often includes integrating third-party APIs, optimizing website performance, and building flexible content management workflows.
+					I keep up with new tools and practices to deliver work that matches today’s best practices.
+				</p>
+				<p class="mt-3 text-sm text-gray-600">
+					My focus is on creating <strong class="font-semibold">fast, scalable, and SEO-optimized websites</strong> that support business growth.
+				</p>
+
+				<ul class="mt-5 flex flex-col gap-y-3">
+					<li class="flex items-center gap-x-2.5">
+						<a class="w-auto flex items-center gap-x-[0.3125rem] whitespace-nowrap py-2 px-4.5 rounded-full
+											text-slate-800 text-sm font-medium border border-slate-800
+											transition-colors duration-300 cursor-pointer
+											hover:bg-emerald-600 hover:text-white hover:border-emerald-600
+											focus:outline-hidden focus:text-white focus:bg-emerald-700 focus:border-emerald-700"
+							 href="https://www.upwork.com/freelancers/~01f40ed9d47ad4a604" target="_blank" rel="noopener noreferrer">
+							<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+									 class="size-4.5 stroke-2" width="18" height="18">
+								<path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+							</svg>
+							<span>Hire Me on UpWork</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+
+			<!-- Skills -->
+			<hr class="text-slate-200 my-8 sm:my-12" />
+			<div id="skills">
+				<h2 class="mb-5 font-medium text-gray-800 text-lg"><span class="relative -top-0.5">👨🏻‍💻️</span> Skills</h2>
+
+				<div class="space-y-3">
+					<dl class="flex flex-col sm:flex-row gap-1">
+						<dt class="min-w-30">
+							<span class="block text-sm text-gray-500 pt-0.5">WordPress:</span>
+						</dt>
+						<dd>
+							<ul>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">Custom Theme Development</li>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">Plugin Customization</li>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">WooCommerce</li>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">Advanced Custom Fields</li>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">WordPress API</li>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">Elementor</li>
+								<li class="me-1 after:content-['.'] inline-flex items-center text-sm text-gray-800">Gutenberg Blocks</li>
+							</ul>
+						</dd>
+					</dl>
+
+					<dl class="flex flex-col sm:flex-row gap-1">
+						<dt class="min-w-30">
+							<span class="block text-sm text-gray-500 pt-0.5">Frontend:</span>
+						</dt>
+						<dd>
+							<ul>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">HTML5 & CSS3</li>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">JavaScript (ES6+)</li>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">jQuery</li>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">Alpine.js</li>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">SASS/SCSS</li>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">Bootstrap</li>
+								<li class="me-1 after:content-['.'] inline-flex items-center text-sm text-gray-800">Tailwind CSS</li>
+							</ul>
+						</dd>
+					</dl>
+
+					<dl class="flex flex-col sm:flex-row gap-1">
+						<dt class="min-w-30">
+							<span class="block text-sm text-gray-500 pt-0.5">Backend:</span>
+						</dt>
+						<dd>
+							<ul>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">PHP 8+</li>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">MySQL</li>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">Git</li>
+								<li class="me-1 after:content-['.'] inline-flex items-center text-sm text-gray-800">WP CLI</li>
+							</ul>
+						</dd>
+					</dl>
+
+					<dl class="flex flex-col sm:flex-row gap-1">
+						<dt class="min-w-30">
+							<span class="block text-sm text-gray-500 pt-0.5">Tools:</span>
+						</dt>
+						<dd>
+							<ul>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">Figma</li>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">Sketch</li>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">Adobe</li>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">Trello</li>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">Asana</li>
+								<li class="me-1 after:content-['.'] inline-flex items-center text-sm text-gray-800">Slack</li>
+							</ul>
+						</dd>
+					</dl>
+
+					<dl class="flex flex-col sm:flex-row gap-1">
+						<dt class="min-w-30">
+							<span class="block text-sm text-gray-500 pt-0.5">SEO & Speed:</span>
+						</dt>
+						<dd>
+							<ul>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">Yoast SEO</li>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">AIOSEO</li>
+								<li class="me-1 after:content-['.'] inline-flex items-center text-sm text-gray-800">Core Web Vitals</li>
+							</ul>
+						</dd>
+					</dl>
+
+					<dl class="flex flex-col sm:flex-row gap-1">
+						<dt class="min-w-30">
+							<span class="block text-sm text-gray-500 pt-0.5">Soft Skills:</span>
+						</dt>
+						<dd>
+							<ul>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">
+									Effective Communication
+								</li>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">
+									Proactive Problem-Solving
+								</li>
+								<li class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">
+									Detail-Oriented
+								</li>
+								<li class="me-1 after:content-['.'] inline-flex items-center text-sm text-gray-800">
+									Strong Time Management
+								</li>
+							</ul>
+						</dd>
+					</dl>
+
+				</div>
+			</div>
+
+
+			<!-- Clients -->
+			<hr class="text-slate-200 my-8 sm:my-12" />
+			<div id="clients" class="">
+				<h2 class="mb-5 font-medium text-gray-800 text-lg"><span class="relative -top-1">👥</span> Clients & Partners</h2>
+
+				<div class="grid grid-cols-2 gap-4 items-center sm:grid-cols-3 md:gap-8">
+					<div class="flex items-center justify-center h-auto min-h-18 w-30 sm:w-32 md:w-36 mx-auto">
+						<picture class="inline-block grayscale-70 transition-all duration-300 hover:grayscale-0">
+							<source srcset="./assets/beetroot.webp" type="image/webp">
+							<img class="max-w-full h-auto" src="./assets/beetroot.png" alt="Beetroot Logo">
+						</picture>
+					</div>
+					<div class="flex items-center justify-center h-auto min-h-18 w-26 sm:w-26 md:w-30 mx-auto">
+						<picture class="inline-block grayscale-90 transition-all duration-300 hover:grayscale-0">
+							<source srcset="./assets/krooga.webp" type="image/webp">
+							<img class="max-w-full h-auto" src="./assets/krooga.png" alt="Krooga Logo">
+						</picture>
+					</div>
+					<div class="flex items-center justify-center h-auto min-h-18 w-30 sm:w-31 md:w-34 mx-auto">
+						<picture class="inline-block grayscale-80 transition-all duration-300 hover:grayscale-0">
+							<source srcset="./assets/smx.webp" type="image/webp">
+							<img class="max-w-full h-auto" src="./assets/smx.png" alt="SandorMax Logo">
+						</picture>
+					</div>
+					<div class="flex items-center justify-center h-auto min-h-18 w-20 sm:w-22 md:w-26 mx-auto">
+						<picture class="inline-block grayscale-90 transition-all duration-300 hover:grayscale-0">
+							<source srcset="./assets/intersect.webp" type="image/webp">
+							<img class="max-w-full h-auto" src="./assets/intersect.png" alt="Intersect Marketing Group Logo">
+						</picture>
+					</div>
+					<div class="flex items-center justify-center h-auto min-h-18 w-18 sm:w-20 md:w-22 mx-auto">
+						<picture class="inline-block grayscale-90 transition-all duration-300 hover:grayscale-0">
+							<source srcset="./assets/twla.webp" type="image/webp">
+							<img class="max-w-full h-auto" src="./assets/twla.png" alt="White Label Agency Logo">
+						</picture>
+					</div>
+					<div class="flex items-center justify-center h-auto min-h-18 w-24 sm:w-26 md:w-30 mx-auto">
+						<picture class="inline-block grayscale-90 transition-all duration-300 hover:grayscale-0">
+							<source srcset="./assets/ivivelabs.webp" type="image/webp">
+							<img class="max-w-full h-auto" src="./assets/ivivelabs.png" alt="iViveLabs Logo">
+						</picture>
+					</div>
+				</div>
+			</div>
+
+
+			<!-- Testimonials -->
+			<div id="testimonials" class="mt-10 sm:mt-14">
+				<h2 class="mb-5 font-medium text-gray-800 text-lg"><span class="relative -top-0.5">⭐</span> Testimonials</h2>
+
+				<div class="columns-1 sm:columns-2 gap-3 space-y-3 md:gap-5 md:space-y-5">
+
+					<div class="break-inside-avoid bg-white border border-slate-200 p-4.5 rounded-xl">
+						<blockquote>
+							<span class="text-[1.0625rem]/6 font-serif text-gray-800">Denys is the BEST. We have worked together on many projects. I always go to him first with any new projects. He is the most trustworthy, hard-working developer I have ever had the pleasure of working with. He has been able to solve every problem that I have thrown at him quickly, professionally and seemingly effortlessly.</span>
+							<footer class="mt-3">
+								<div class="flex items-center gap-x-2">
+									<div class="grow">
+										<div class="text-xs text-gray-500">~ Mark R.</div>
+									</div>
+								</div>
+							</footer>
+						</blockquote>
+					</div>
+
+					<div class="break-inside-avoid bg-white border border-slate-200 p-4.5 rounded-xl">
+						<blockquote>
+							<span class="text-[1.0625rem]/6 font-serif text-gray-800">Efficient, polite and competent. The next time I need work done on my Wordpress site he will be the first person I call.</span>
+							<footer class="mt-3">
+								<div class="flex items-center gap-x-2">
+									<div class="grow">
+										<div class="text-xs text-gray-500">~ Phil R</div>
+									</div>
+								</div>
+							</footer>
+						</blockquote>
+					</div>
+
+					<div class="break-inside-avoid bg-white border border-slate-200 p-4.5 rounded-xl">
+						<blockquote>
+							<span class="text-[1.0625rem]/6 font-[Lora,serif] text-gray-800">We worked beautifully with Denys for this project and could not be happier with the results. The quality of his work and communication on this project lead us to hire him again for subsequent projects. We're very pleased.</span>
+							<footer class="mt-3">
+								<div class="flex items-center gap-x-2">
+									<div class="grow">
+										<div class="text-xs text-gray-500">~ Rex B.</div>
+									</div>
+								</div>
+							</footer>
+						</blockquote>
+					</div>
+
+
+					<div class="break-inside-avoid bg-white border border-slate-200 p-4.5 rounded-xl">
+						<blockquote>
+							<span class="text-[1.0625rem]/6 font-serif text-gray-800">Denys was very helpful, always very polite, and successfully completed all of the front end development and WP backend updates that were required.</span>
+							<footer class="mt-3">
+								<div class="flex items-center gap-x-2">
+									<div class="grow">
+										<div class="text-xs text-gray-500">~ Natalie C.</div>
+									</div>
+								</div>
+							</footer>
+						</blockquote>
+					</div>
+
+				</div>
+
+			</div>
+
+
+			<!-- Experience -->
+			<div id="work" class="mt-10 sm:mt-14">
+				<h2 class="mb-5 font-medium text-gray-800 text-lg"><span class="relative -top-0.5">💼</span> Work Experience</h2>
+
+				<div>
+					<!-- Freelance -->
+					<div class="group relative flex gap-x-3 md:gap-x-5">
+						<div class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:bg-slate-300">
+							<div class="relative z-10 size-6 flex justify-center items-center">
+								<svg class="shrink-0 size-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M12 12h.01" />
+									<path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+									<path d="M22 13a18.15 18.15 0 0 1-20 0" />
+									<rect width="20" height="14" x="2" y="6" rx="2" />
+								</svg>
+							</div>
+						</div>
+
+						<div class="grow pb-8 group-last:pb-0">
+							<h3 class="mb-1 text-xs text-gray-600">Jan 2017 - Present</h3>
+							<p class="font-semibold text-sm text-gray-800 dark:text-neutral-200">Senior WordPress Developer</p>
+							<p class="mt-1 text-sm text-gray-600">Freelance / Remote</p>
+
+							<ul class="ps-1 text-sm text-gray-600 list-disc ms-6 mt-3 space-y-1.5">
+								<li>Develop custom WordPress Themes/Plugins from scratch</li>
+								<li>Convert Figma/Sketch/Adobe designs into responsive WordPress sites</li>
+								<li>Set up and customize WooCommerce stores</li>
+								<li>Optimize websites for performance and SEO</li>
+								<li>Extend functionality with Advanced Custom Fields and Gutenberg</li>
+								<li>Maintain and update client websites</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="group relative flex gap-x-3 md:gap-x-5">
+						<div class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:bg-slate-300">
+							<div class="relative z-10 size-6 flex justify-center items-center">
+								<svg class="shrink-0 size-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M12 12h.01" />
+									<path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+									<path d="M22 13a18.15 18.15 0 0 1-20 0" />
+									<rect width="20" height="14" x="2" y="6" rx="2" />
+								</svg>
+							</div>
+						</div>
+
+						<div class="grow pb-8 group-last:pb-0">
+							<h3 class="mb-1 text-xs text-gray-600">Aug 2016 - Jan 2017 · 6 mos</h3>
+							<p class="font-semibold text-sm text-gray-800 dark:text-neutral-200">Head of Production</p>
+							<p class="mt-1 text-sm text-gray-600">The White Label Agency | Odesa, Ukraine</p>
+
+							<ul class="ps-1 text-sm text-gray-600 list-disc ms-6 mt-3 space-y-1.5">
+								<li>Schedule and prioritize development projects</li>
+								<li>Quote projects and coordinate with account managers</li>
+								<li>Ensure on-time delivery and high-quality results</li>
+								<li>Motivate and mentor team members</li>
+								<li>Develop and customize WooCommerce websites</li>
+								<li>Train new team members</li>
+								<li>Hire and onboard developers</li>
+								<li>WordPress websites from scratch</li>
+								<li>Improve internal workflows and processes</li>
+							</ul>
+						</div>
+					</div>
+
+
+					<div class="group relative flex gap-x-3 md:gap-x-5">
+						<div class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:bg-slate-300">
+							<div class="relative z-10 size-6 flex justify-center items-center">
+								<svg class="shrink-0 size-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M12 12h.01" />
+									<path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+									<path d="M22 13a18.15 18.15 0 0 1-20 0" />
+									<rect width="20" height="14" x="2" y="6" rx="2" />
+								</svg>
+							</div>
+						</div>
+
+						<div class="grow pb-8 group-last:pb-0">
+							<h3 class="mb-1 text-xs text-gray-600">Feb 2015 - Aug 2016 · 1yr 7 mos</h3>
+							<p class="font-semibold text-sm text-gray-800 dark:text-neutral-200">WordPress Team Leader</p>
+							<p class="mt-1 text-sm text-gray-600">The White Label Agency | Odesa, Ukraine</p>
+
+							<ul class="ps-1 text-sm text-gray-600 list-disc ms-6 mt-3 space-y-1.5">
+								<li>Schedule and prioritize development projects</li>
+								<li>Quote projects and coordinate with account managers</li>
+								<li>Ensure on-time delivery and high-quality results</li>
+								<li>Motivate and mentor team members</li>
+								<li>Train new developers</li>
+								<li>Hire and onboard developers</li>
+								<li>WordPress websites from scratch</li>
+								<li>Improve team workflows and processes</li>
+							</ul>
+						</div>
+					</div>
+
+
+					<div class="group relative flex gap-x-3 md:gap-x-5">
+						<div class="relative group-last:after:hidden after:absolute after:top-8 after:bottom-2 after:start-3 after:w-px after:bg-slate-300">
+							<div class="relative z-10 size-6 flex justify-center items-center">
+								<svg class="shrink-0 size-6 text-gray-600" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+									<path d="M12 12h.01" />
+									<path d="M16 6V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+									<path d="M22 13a18.15 18.15 0 0 1-20 0" />
+									<rect width="20" height="14" x="2" y="6" rx="2" />
+								</svg>
+							</div>
+						</div>
+
+						<div class="grow pb-8 group-last:pb-0">
+							<h3 class="mb-1 text-xs text-gray-600">Mar 2013 - Feb 2015 · 2 yrs</h3>
+							<p class="font-semibold text-sm text-gray-800 dark:text-neutral-200">WordPress Developer</p>
+							<p class="mt-1 text-sm text-gray-600">Beetroot - The home of great teams | Odessa, Ukraine</p>
+							<ul class="ps-1 text-sm text-gray-600 list-disc ms-6 mt-3 space-y-1.5">
+								<li>Build WordPress websites from scratch</li>
+								<li>Convert PSD designs into WordPress</li>
+								<li>Implement responsive web design</li>
+								<li>Develop WordPress multisites</li>
+								<li>Build WooCommerce stores</li>
+								<li>Develop multilingual websites</li>
+								<li>Migrate websites to WordPress</li>
+								<li>Integrate premium themes with child themes</li>
+								<li>Customize plugins to client requirements</li>
+								<li>Work with CSS frameworks</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+
+			<!-- Contact -->
+			<div id="contact" class="mt-10 sm:mt-14">
+				<h2 class="mb-4 font-medium text-gray-800 text-lg"><span class="relative -top-0.5">📩</span> Get In Touch</h2>
+
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-x-3 border-y border-gray-200 divide-y sm:divide-y-0 sm:divide-x divide-gray-200">
+					<div class="sm:-ms-4 py-8 sm:px-4">
+						<h3 class="text-sm font-semibold text-gray-800 mb-3">Let's Work Together</h3>
+						<p class="text-sm text-gray-600">Ready to bring your WordPress project to life?</p>
+						<p class="text-sm text-gray-600 mb-4">I'm here to help you create something amazing.</p>
+
+						<div class="space-y-4">
+
+
+							<div class="flex items-center gap-x-2">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+										 class="size-4 text-gray-800" width="16" height="16">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244" />
+								</svg>
+								<a class="text-[0.8125rem] text-gray-600 underline
+											transition-colors duration-300
+											hover:text-emerald-600 hover:decoration-1 focus:outline-hidden focus:decoration-2"
+									 href="https://denstetsenko.com/" target="_blank">
+									denstetsenko.com
+								</a>
+							</div>
+
+							<div class="flex items-center gap-x-2">
+								<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+										 class="size-4 text-gray-800" width="16" height="16">
+									<path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+									<path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+								</svg>
+								<span class="text-sm text-gray-600">Remote</span>
+							</div>
+
+							<div class="flex items-center gap-x-2">
+								<a class="w-auto flex items-center gap-x-[0.3125rem] whitespace-nowrap py-2 px-4.5 rounded-full
+											text-slate-800 text-sm font-medium border border-slate-800
+											transition-colors duration-300 cursor-pointer
+											hover:bg-emerald-600 hover:text-white hover:border-emerald-600
+											focus:outline-hidden focus:text-white focus:bg-emerald-700 focus:border-emerald-700"
+									 href="https://www.upwork.com/freelancers/~01f40ed9d47ad4a604" target="_blank" rel="noopener noreferrer">
+									<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+											 class="size-4.5 stroke-2" width="18" height="18">
+										<path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+									</svg>
+									<span>Hire Me on UpWork</span>
+								</a>
+							</div>
+
+						</div>
+					</div>
+
+					<div class="py-8 sm:px-4">
+						<form
+								x-data="{ success: false, error: false }"
+								@submit.prevent="
+									fetch('https://formspree.io/f/mdkwoqjj', {
+										method: 'POST',
+										body: new FormData($el),
+										headers: { Accept: 'application/json' }
+									})
+									.then(response => {
+										if (response.ok) {
+											success = true; error = false;
+											$el.reset()
+										} else {
+											error = true; success = false;
+										}
+									})
+									.catch(() => {
+										error = true; success = false;
+									})
+								"
+								class="space-y-4">
+							<div>
+								<label for="formspree_name" class="block text-sm font-base text-gray-500">Your Name</label>
+								<input type="text" name="name" id="formspree_name" required
+											 class="text-sm w-full border-b border-slate-300 pt-0.5 pb-1.5 transition-all duration-300
+									 						focus:border-emerald-500 focus:outline-none">
+							</div>
+
+							<div>
+								<label for="formspree_email" class="block text-sm font-base text-gray-500">Your Email</label>
+								<input type="email" name="email" id="formspree_email" required
+											 class="text-sm w-full border-b border-slate-300 pt-0.5 pb-1.5 transition-all duration-300
+									 						focus:border-emerald-500 focus:outline-none">
+							</div>
+
+							<div>
+								<label for="formspree_message" class="block text-sm font-base text-gray-500">Message</label>
+								<textarea name="message" id="formspree_message" rows="2" required
+													class="text-sm w-full border-b border-slate-300 pt-0.5 pb-1.5 transition-all duration-300
+									 							 focus:border-emerald-500 focus:outline-none"></textarea>
+							</div>
+
+							<p x-show="success" class="text-green-600 text-sm text-center">✅ Message sent successfully!</p>
+							<p x-show="error" class="text-red-600 text-sm text-center">⚠️ Something went wrong. Please try again.</p>
+
+							<button type="submit"
+											class="w-full whitespace-nowrap py-2 px-4.5
+														 text-white text-sm font-medium rounded-full border border-transparent bg-slate-800
+														 transition-colors duration-300 cursor-pointer
+														 hover:bg-emerald-600 focus:outline-hidden focus:bg-emerald-700">
+								Send Message
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</main>
+
+	<footer id="site-footer" class="w-full max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+		<div class="py-6 border-t border-slate-200">
+			<div class="flex flex-wrap justify-between items-center gap-4">
+				<div>
+					<p class="text-xs text-gray-600">© 2025 Denys Stetsenko. All Rights Reserved.</p>
+				</div>
+				<!-- End Col -->
+
+				<!-- List -->
+				<ul class="flex flex-wrap items-center gap-4">
+
+					<li class="inline-block text-xs">
+						<a class="text-xs text-gray-500 underline
+											transition-colors duration-300
+											hover:text-emerald-600 hover:decoration-1 focus:outline-hidden focus:decoration-2"
+							 href="https://www.upwork.com/freelancers/~01f40ed9d47ad4a604" target="_blank" rel="noopener noreferrer">
+							upWork
+						</a>
+					</li>
+
+					<li class="inline-block text-xs">
+						<a class="text-xs text-gray-500 underline
+											transition-colors duration-300
+											hover:text-emerald-600 hover:decoration-1 focus:outline-hidden focus:decoration-2"
+							 href="https://github.com/DenisStetsenko/" target="_blank" rel="noopener noreferrer">
+							GitHub
+						</a>
+					</li>
+
+				</ul>
+				<!-- End List -->
+			</div>
+		</div>
+	</footer>
+	<script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/focus@3.15.0/dist/cdn.min.js"></script>
+	<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.0/dist/cdn.min.js"></script>
+</body>
+</html>
