@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" class="motion-safe:scroll-smooth scroll-pt-18 lg:scroll-pt-14">
+<head>
+	<meta charset="UTF-8">
+	<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Web engineer building fast, scalable, SEO-ready WordPress sites from scratch. Custom themes, WooCommerce and API integrations. Available for new projects.">
+
+	<meta property="og:url" content="https://denstetsenko.com/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Denys Stetsenko">
+	<meta property="og:title" content="Denys Stetsenko">
+	<meta property="og:description" content="Web engineer building fast, scalable, SEO-ready WordPress sites from scratch. Custom themes, WooCommerce and API integrations. Available for new projects.">
+
+	<title>Denys Stetsenko</title>
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/png" href="./assets/favicon.png">
+	<link rel="apple-touch-icon" href="./assets/favicon.png">
+
+	<!-- Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+	<link href="./src/output.css" rel="stylesheet">
+
+	<!-- Google tag (gtag.js) -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-H6ZQK70J7T"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-H6ZQK70J7T');
+	</script>
+</head>
+<body class="bg-slate-50 text-slate-900 text-[15px] leading-relaxed antialiased">
+
+	<div class="min-h-screen pt-14 lg:pt-0 lg:grid lg:grid-cols-[320px_minmax(0,1fr)]">
+
+		<!-- Sidebar -->
+		<aside class="bg-white border-b border-slate-200 px-6 py-8 flex flex-col items-center text-center gap-6
+		              lg:items-stretch lg:text-left lg:border-b-0 lg:border-r lg:px-9 lg:py-8 lg:sticky lg:top-0 lg:h-screen lg:overflow-y-auto">
+			<picture class="size-20 self-center lg:size-42 lg:[@media(height<720px)]:size-32">
+				<source srcset="./assets/denys-stetsenko.webp" type="image/webp">
+				<img class="size-full rounded-full object-cover" src="./assets/denys-stetsenko.png" alt="Denys Stetsenko">
+			</picture>
+
+			<div class="lg:text-center">
+				<div class="text-[26px] font-extrabold tracking-tight leading-tight">Denys Stetsenko</div>
+				<div class="text-slate-600 mt-1.5 font-medium">Web Engineer · Custom CMS</div>
+			</div>
+
+			<div class="flex items-center justify-center gap-2 text-[13px] font-semibold bg-green-50 text-green-800 border border-green-200 rounded-full px-3.5 py-2">
+				<span class="size-2 rounded-full bg-green-600 motion-safe:animate-[ds-pulse_1.8s_ease-out_infinite]"></span>Available for new projects
+			</div>
+
+			<!-- Mobile: fixed horizontal bar. Active section: last one whose top crossed 1/3 of viewport; last section when scrolled to bottom -->
+			<nav class="fixed top-0 inset-x-0 z-50 h-14 flex items-center gap-1 px-3 overflow-x-auto whitespace-nowrap [scrollbar-width:none]
+			            bg-white/95 backdrop-blur border-b border-slate-200 font-semibold text-sm
+			            lg:static lg:h-auto lg:flex-col lg:items-stretch lg:px-0 lg:overflow-visible lg:bg-transparent lg:border-0"
+			     x-data="{
+			       active: 'about',
+			       spy() {
+			         const s = [...document.querySelectorAll('main section[id]')];
+			         const id = innerHeight + scrollY >= document.documentElement.scrollHeight - 2
+			           ? s.at(-1).id
+			           : (s.findLast(x => x.getBoundingClientRect().top <= innerHeight / 3) || s[0]).id;
+			         if (id === this.active) return;
+			         this.active = id;
+			         // Keep active link visible in mobile bar; no-op on desktop
+			         this.$el.scrollLeft = this.$el.querySelector(`a[href='#${id}']`).offsetLeft - 12;
+			       },
+			       cls(id) { return this.active === id ? 'text-blue-700 bg-blue-50' : 'text-slate-600 hover:bg-blue-50 hover:text-blue-700' }
+			     }"
+			     x-init="spy()" @scroll.window.passive="spy()" @resize.window="spy()">
+				<a href="#about" class="px-3 py-2 rounded-lg transition-colors" :class="cls('about')" :aria-current="active === 'about'">About</a>
+				<a href="#skills" class="px-3 py-2 rounded-lg transition-colors" :class="cls('skills')" :aria-current="active === 'skills'">Skills</a>
+				<a href="#clients" class="px-3 py-2 rounded-lg transition-colors" :class="cls('clients')" :aria-current="active === 'clients'">Clients &amp; Contracts</a>
+				<a href="#testimonials" class="px-3 py-2 rounded-lg transition-colors" :class="cls('testimonials')" :aria-current="active === 'testimonials'">Testimonials</a>
+				<a href="#certifications" class="px-3 py-2 rounded-lg transition-colors" :class="cls('certifications')" :aria-current="active === 'certifications'">Certifications</a>
+				<a href="#work" class="px-3 py-2 rounded-lg transition-colors" :class="cls('work')" :aria-current="active === 'work'">Work Experience</a>
+				<a href="#contact" class="px-3 py-2 rounded-lg transition-colors" :class="cls('contact')" :aria-current="active === 'contact'">Get in touch</a>
+			</nav>
+
+			<div class="w-full max-w-sm flex flex-col gap-4 lg:mt-auto">
+				<a href="#contact" class="bg-blue-700 hover:bg-blue-600 text-white font-bold py-3 rounded-[10px] text-center transition-colors">Start a project</a>
+				<div class="flex gap-5 justify-center text-[13px] font-semibold">
+					<a href="https://www.upwork.com/freelancers/~01f40ed9d47ad4a604" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-blue-700 inline-flex items-center gap-1.5 transition-colors">
+						<svg class="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.228-1.076.008-.042c.207-1.143.849-3.06 2.839-3.06 1.492 0 2.703 1.212 2.703 2.703-.001 1.489-1.212 2.702-2.704 2.702zm0-8.14c-2.539 0-4.51 1.649-5.31 4.366-1.22-1.834-2.148-4.036-2.687-5.892H7.828v7.112c-.002 1.406-1.141 2.546-2.547 2.548-1.405-.002-2.543-1.143-2.545-2.548V3.492H0v7.112c0 2.914 2.37 5.303 5.281 5.303 2.913 0 5.283-2.389 5.283-5.303v-1.19c.529 1.107 1.182 2.229 1.974 3.221l-1.673 7.873h2.797l1.213-5.71c1.063.679 2.285 1.109 3.686 1.109 3 0 5.439-2.452 5.439-5.45 0-3-2.439-5.439-5.439-5.439z"/></svg>Upwork
+					</a>
+					<a href="https://github.com/DenisStetsenko/" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-blue-700 inline-flex items-center gap-1.5 transition-colors">
+						<svg class="size-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2.1c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.09 0 4.42-2.7 5.39-5.26 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>GitHub
+					</a>
+				</div>
+			</div>
+		</aside>
+
+		<main class="px-5 pt-10 pb-12 flex flex-col gap-14 max-w-[960px] lg:px-14 lg:gap-16">
+
+			<!-- About -->
+			<section id="about">
+				<h1 class="mb-5 text-[42px] font-extrabold tracking-tight leading-[1.15] text-balance lg:text-6xl">Fast, scalable, SEO&#8209;ready WordPress sites — <span class="text-blue-700">built from scratch.</span></h1>
+				<p class="text-lg text-slate-600 max-w-[640px] text-pretty">Over a decade of custom WordPress work for startups, small businesses and agencies. Independent since 2017. Earlier — Head of Production and WordPress Team Lead at an agency, where I hired and mentored developers.</p>
+			</section>
+
+			<!-- Skills -->
+			<section id="skills">
+				<h2 class="mb-5 text-base font-bold tracking-[.1em] uppercase text-slate-800 flex items-center gap-2"><svg class="size-4 text-blue-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18l6-6-6-6"></path><path d="M8 6l-6 6 6 6"></path></svg>Skills</h2>
+				<p class="mb-4 text-slate-600 text-pretty">Most of my work is Figma&#8209;to&#8209;WordPress builds, WooCommerce stores, API integrations, and moving sites off Elementor, Divi, Webflow or Wix onto a custom theme.</p>
+
+				<div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-3">
+					<div class="bg-white border border-slate-200 rounded-[14px] px-[22px] py-5">
+						<h3 class="font-bold mb-3">WordPress</h3>
+						<ul class="flex flex-wrap gap-2 text-[13px] font-semibold text-blue-800">
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">Custom themes &amp; plugins</li>
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">Gutenberg</li>
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">ACF</li>
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">WooCommerce</li>
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">REST API</li>
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">Multisite</li>
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">WPML / Polylang</li>
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">Security hardening</li>
+						</ul>
+					</div>
+					<div class="bg-white border border-slate-200 rounded-[14px] px-[22px] py-5">
+						<h3 class="font-bold mb-3">Frontend</h3>
+						<ul class="flex flex-wrap gap-2 text-[13px] font-semibold text-blue-800">
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">HTML5 / SCSS</li>
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">Tailwind CSS</li>
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">Bootstrap 5</li>
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">JavaScript ES6+</li>
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">jQuery</li>
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">Alpine.js</li>
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">Accessibility (WCAG)</li>
+						</ul>
+					</div>
+					<div class="bg-white border border-slate-200 rounded-[14px] px-[22px] py-5">
+						<h3 class="font-bold mb-3">Backend &amp; DevOps</h3>
+						<ul class="flex flex-wrap gap-2 text-[13px] font-semibold text-blue-800">
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">PHP 8+</li>
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">MySQL</li>
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">WP&#8209;CLI</li>
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">Git / GitHub Actions</li>
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">Docker / DDEV</li>
+						</ul>
+					</div>
+					<div class="bg-white border border-slate-200 rounded-[14px] px-[22px] py-5">
+						<h3 class="font-bold mb-3">SEO &amp; Performance</h3>
+						<ul class="flex flex-wrap gap-2 text-[13px] font-semibold text-blue-800">
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">Cloudflare</li>
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">Core Web Vitals</li>
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">Schema.org</li>
+							<li class="bg-blue-50 px-2.5 py-1.5 rounded-lg">Object cache / Redis</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+			<!-- Clients -->
+			<section id="clients">
+				<h2 class="mb-5 text-base font-bold tracking-[.1em] uppercase text-slate-800 flex items-center gap-2"><svg class="size-4 text-blue-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"></path></svg>Clients &amp; Contracts</h2>
+
+				<div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+					<div class="bg-white border border-slate-200 rounded-[14px] h-[120px] p-6 flex items-center justify-center">
+						<picture class="contents">
+							<source srcset="./assets/beetroot.webp" type="image/webp">
+							<img class="max-h-full max-w-full object-contain" src="./assets/beetroot.png" loading="lazy" alt="Beetroot">
+						</picture>
+					</div>
+					<div class="bg-white border border-slate-200 rounded-[14px] h-[120px] p-6 flex items-center justify-center">
+						<picture class="contents">
+							<source srcset="./assets/krooga.webp" type="image/webp">
+							<img class="max-h-full max-w-full object-contain p-1" src="./assets/krooga.png" loading="lazy" alt="Krooga">
+						</picture>
+					</div>
+					<div class="bg-white border border-slate-200 rounded-[14px] h-[120px] p-6 flex items-center justify-center">
+						<img class="max-h-full max-w-full object-contain" src="./assets/smx.svg" loading="lazy" alt="SandorMax">
+					</div>
+					<div class="bg-white border border-slate-200 rounded-[14px] h-[120px] p-6 flex items-center justify-center">
+						<picture class="contents">
+							<source srcset="./assets/intersect.webp" type="image/webp">
+							<img class="max-h-full max-w-full object-contain" src="./assets/intersect.png" loading="lazy" alt="Intersect Marketing Group">
+						</picture>
+					</div>
+					<div class="bg-white border border-slate-200 rounded-[14px] h-[120px] p-6 flex items-center justify-center">
+						<picture class="contents">
+							<source srcset="./assets/twla.webp" type="image/webp">
+							<img class="max-h-full max-w-full object-contain" src="./assets/twla.png" loading="lazy" alt="The White Label Agency">
+						</picture>
+					</div>
+					<div class="bg-white border border-slate-200 rounded-[14px] h-[120px] p-6 flex items-center justify-center">
+						<picture class="contents">
+							<source srcset="./assets/ivivelabs.webp" type="image/webp">
+							<img class="max-h-full max-w-full object-contain" src="./assets/ivivelabs.png" loading="lazy" alt="iViveLabs">
+						</picture>
+					</div>
+				</div>
+			</section>
+
+			<!-- Testimonials -->
+			<section id="testimonials">
+				<h2 class="mb-5 text-base font-bold tracking-[.1em] uppercase text-slate-800 flex items-center gap-2"><svg class="size-4 text-blue-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>Testimonials</h2>
+
+				<div class="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-3">
+					<blockquote class="bg-white border border-slate-200 rounded-[14px] p-6 flex flex-col gap-3.5">
+						<div class="text-yellow-400 tracking-[2px] text-sm" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+						<p class="text-slate-700 flex-1">“Denys is the BEST. We have worked together on many projects. I always go to him first with any new projects. He is the most trustworthy, hard-working developer I have ever had the pleasure of working with. He has been able to solve every problem that I have thrown at him quickly, professionally and seemingly effortlessly.”</p>
+						<footer class="text-sm text-slate-500">~ Mark R.</footer>
+					</blockquote>
+					<blockquote class="bg-white border border-slate-200 rounded-[14px] p-6 flex flex-col gap-3.5">
+						<div class="text-yellow-400 tracking-[2px] text-sm" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+						<p class="text-slate-700 flex-1">“We worked beautifully with Denys for this project and could not be happier with the results. The quality of his work and communication on this project lead us to hire him again for subsequent projects. We're very pleased.”</p>
+						<footer class="text-sm text-slate-500">~ Rex B.</footer>
+					</blockquote>
+					<blockquote class="bg-white border border-slate-200 rounded-[14px] p-6 flex flex-col gap-3.5">
+						<div class="text-yellow-400 tracking-[2px] text-sm" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+						<p class="text-slate-700 flex-1">“Efficient, polite and competent. The next time I need work done on my WordPress site he will be the first person I call.”</p>
+						<footer class="text-sm text-slate-500">~ Phil R.</footer>
+					</blockquote>
+					<blockquote class="bg-white border border-slate-200 rounded-[14px] p-6 flex flex-col gap-3.5">
+						<div class="text-yellow-400 tracking-[2px] text-sm" role="img" aria-label="5 out of 5 stars">★★★★★</div>
+						<p class="text-slate-700 flex-1">“Denys was very helpful, always very polite, and successfully completed all of the front end development and WP backend updates that were required.”</p>
+						<footer class="text-sm text-slate-500">~ Natalie C.</footer>
+					</blockquote>
+				</div>
+			</section>
+
+			<!-- Certifications -->
+			<section id="certifications">
+				<h2 class="mb-5 text-base font-bold tracking-[.1em] uppercase text-slate-800 flex items-center gap-2"><svg class="size-4 text-blue-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="6"></circle><path d="M15.5 13L17 22l-5-3-5 3 1.5-9"></path></svg>Licenses &amp; Certifications</h2>
+
+				<div class="bg-white border border-slate-200 rounded-[14px] px-4 py-2 lg:pl-6">
+					<a href="https://www.credly.com/badges/2ba4f64b-ac70-44a0-9727-25620b92383a/linked_in_profile" target="_blank" rel="nofollow noopener noreferrer" class="flex items-center gap-4 py-3.5 transition-colors hover:text-blue-700">
+						<picture class="flex-none">
+							<source srcset="./assets/certifications/web-development-fundamentals.webp" type="image/webp">
+							<img class="block size-11 object-contain" src="./assets/certifications/web-development-fundamentals.png" loading="lazy" alt="">
+						</picture>
+						<div class="flex-1 font-semibold">Web Development Fundamentals</div>
+						<div class="text-[13px] text-slate-500">IBM SkillsBuild</div>
+						<span class="pr-2 text-blue-700 font-bold" aria-hidden="true">↗</span>
+					</a>
+					<a href="https://www.credly.com/badges/5c98c67c-cc4d-40ca-8a0d-9dc0af195b73/linked_in_profile" target="_blank" rel="nofollow noopener noreferrer" class="flex items-center gap-4 py-3.5 border-t border-slate-100 transition-colors hover:text-blue-700">
+						<picture class="flex-none">
+							<source srcset="./assets/certifications/wordpress-for-developers.webp" type="image/webp">
+							<img class="block size-11 object-contain" src="./assets/certifications/wordpress-for-developers.png" loading="lazy" alt="">
+						</picture>
+						<div class="flex-1 font-semibold">WordPress for Developers</div>
+						<div class="text-[13px] text-slate-500">O'Reilly Media</div>
+						<span class="pr-2 text-blue-700 font-bold" aria-hidden="true">↗</span>
+					</a>
+					<a href="https://www.credly.com/badges/38b8b18f-ebb7-45af-a954-2ebd34083d34/linked_in_profile" target="_blank" rel="nofollow noopener noreferrer" class="flex items-center gap-4 py-3.5 border-t border-slate-100 transition-colors hover:text-blue-700">
+						<picture class="flex-none">
+							<source srcset="./assets/certifications/php-web-dev-with-mysql.webp" type="image/webp">
+							<img class="block size-11 object-contain" src="./assets/certifications/php-web-dev-with-mysql.png" loading="lazy" alt="">
+						</picture>
+						<div class="flex-1 font-semibold">PHP Web Dev with MySQL</div>
+						<div class="text-[13px] text-slate-500">O'Reilly Media</div>
+						<span class="pr-2 text-blue-700 font-bold" aria-hidden="true">↗</span>
+					</a>
+					<a href="https://www.credly.com/badges/cd398482-bcd7-4345-b114-e89ff38da02b/linked_in_profile" target="_blank" rel="nofollow noopener noreferrer" class="flex items-center gap-4 py-3.5 border-t border-slate-100 transition-colors hover:text-blue-700">
+						<picture class="flex-none">
+							<source srcset="./assets/certifications/jquery-advanced.webp" type="image/webp">
+							<img class="block size-11 object-contain" src="./assets/certifications/jquery-advanced.png" loading="lazy" alt="">
+						</picture>
+						<div class="flex-1 font-semibold">jQuery Advanced</div>
+						<div class="text-[13px] text-slate-500">O'Reilly Media</div>
+						<span class="pr-2 text-blue-700 font-bold" aria-hidden="true">↗</span>
+					</a>
+					<a href="https://www.credly.com/badges/595b0950-950e-4dda-9562-9bc05b4e3ab4/linked_in_profile" target="_blank" rel="nofollow noopener noreferrer" class="flex items-center gap-4 py-3.5 border-t border-slate-100 transition-colors hover:text-blue-700">
+						<picture class="flex-none">
+							<source srcset="./assets/certifications/bootstrap-5-course.webp" type="image/webp">
+							<img class="block size-11 object-contain" src="./assets/certifications/bootstrap-5-course.png" loading="lazy" alt="">
+						</picture>
+						<div class="flex-1 font-semibold">Bootstrap 5</div>
+						<div class="text-[13px] text-slate-500">O'Reilly Media</div>
+						<span class="pr-2 text-blue-700 font-bold" aria-hidden="true">↗</span>
+					</a>
+				</div>
+			</section>
+
+			<!-- Experience -->
+			<section id="work">
+				<h2 class="mb-5 text-base font-bold tracking-[.1em] uppercase text-slate-800 flex items-center gap-2"><svg class="size-4 text-blue-700" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>Work Experience</h2>
+
+				<div class="flex flex-col pl-2">
+
+					<div class="grid grid-cols-[20px_1fr] gap-5 group">
+						<div class="flex flex-col items-center"><span class="size-3 rounded-full bg-blue-700 ring-4 ring-blue-100 mt-1.5 flex-none"></span><span class="w-0.5 flex-1 bg-blue-100 mt-1.5 group-last:hidden"></span></div>
+						<div class="pb-10 group-last:pb-0">
+							<div class="text-[13px] font-bold text-blue-700">Mar 2018 — Present</div>
+							<h3 class="text-lg font-bold mt-1 flex items-center gap-2 flex-wrap">Web Engineer
+								<span class="text-slate-500 font-medium text-[15px] inline-flex items-center gap-2">·
+									<picture class="flex-none"><source srcset="./assets/companies/intersectmg.webp" type="image/webp"><img class="block size-5 object-contain rounded" src="./assets/companies/intersectmg.jpeg" loading="lazy" alt=""></picture>Intersect Marketing Group · Remote</span>
+							</h3>
+							<ul class="mt-3 flex flex-col gap-1.5 text-slate-600 text-sm max-w-[620px]">
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>Custom themes and plugins for agency clients</li>
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>Third&#8209;party API integrations</li>
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>Ongoing performance and maintenance work</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="grid grid-cols-[20px_1fr] gap-5 group">
+						<div class="flex flex-col items-center"><span class="size-3 rounded-full bg-blue-700 ring-4 ring-blue-100 mt-1.5 flex-none"></span><span class="w-0.5 flex-1 bg-blue-100 mt-1.5 group-last:hidden"></span></div>
+						<div class="pb-10 group-last:pb-0">
+							<div class="text-[13px] font-bold text-blue-700">Jan 2017 — Present</div>
+							<h3 class="text-lg font-bold mt-1 flex items-center gap-2 flex-wrap">WordPress Developer
+								<span class="text-slate-500 font-medium text-[15px] inline-flex items-center gap-2">·
+									<img class="size-5 object-contain rounded" src="./assets/smx-icon.svg" loading="lazy" alt="">SandorMax · Remote</span>
+							</h3>
+							<ul class="mt-3 flex flex-col gap-1.5 text-slate-600 text-sm max-w-[620px]">
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>Custom WordPress themes for agency clients</li>
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>Adobe / Sketch designs → responsive WordPress sites</li>
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>Ongoing site updates and maintenance</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="grid grid-cols-[20px_1fr] gap-5 group">
+						<div class="flex flex-col items-center"><span class="size-3 rounded-full bg-blue-700 ring-4 ring-blue-100 mt-1.5 flex-none"></span><span class="w-0.5 flex-1 bg-blue-100 mt-1.5 group-last:hidden"></span></div>
+						<div class="pb-10 group-last:pb-0">
+							<div class="text-[13px] font-bold text-blue-700">Jan 2017 — Present</div>
+							<h3 class="text-lg font-bold mt-1 flex items-center gap-2 flex-wrap">Full Stack Engineer
+								<span class="text-slate-500 font-medium text-[15px] inline-flex items-center gap-2">·
+									<picture class="flex-none"><source srcset="./assets/companies/upwork.webp" type="image/webp"><img class="block size-5 object-contain rounded" src="./assets/companies/upwork.jpeg" loading="lazy" alt=""></picture>Upwork · Remote</span>
+							</h3>
+							<ul class="mt-3 flex flex-col gap-1.5 text-slate-600 text-sm max-w-[620px]">
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>Custom WordPress themes and plugins from scratch</li>
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>Figma / Sketch / Adobe designs → responsive WordPress sites</li>
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>WooCommerce store setup and customization</li>
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>ACF and Gutenberg content workflows</li>
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>Performance and SEO optimization, ongoing maintenance</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="grid grid-cols-[20px_1fr] gap-5 group">
+						<div class="flex flex-col items-center"><span class="size-3 rounded-full bg-blue-700 ring-4 ring-blue-100 mt-1.5 flex-none"></span><span class="w-0.5 flex-1 bg-blue-100 mt-1.5 group-last:hidden"></span></div>
+						<div class="pb-10 group-last:pb-0">
+							<div class="text-[13px] font-bold text-blue-700">Aug 2016 — Jan 2017</div>
+							<h3 class="text-lg font-bold mt-1 flex items-center gap-2 flex-wrap">Head of Production
+								<span class="text-slate-500 font-medium text-[15px] inline-flex items-center gap-2">·
+									<picture class="flex-none"><source srcset="./assets/companies/the_white_label_agency.webp" type="image/webp"><img class="block size-5 object-contain rounded" src="./assets/companies/the_white_label_agency.jpeg" loading="lazy" alt=""></picture>The White Label Agency · Odesa</span>
+							</h3>
+							<ul class="mt-3 flex flex-col gap-1.5 text-slate-600 text-sm max-w-[620px]">
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>Scheduled and prioritized development projects</li>
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>Quoted projects and coordinated with account managers</li>
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>Hired, onboarded and mentored developers</li>
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>Improved internal workflows and processes</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="grid grid-cols-[20px_1fr] gap-5 group">
+						<div class="flex flex-col items-center"><span class="size-3 rounded-full bg-blue-700 ring-4 ring-blue-100 mt-1.5 flex-none"></span><span class="w-0.5 flex-1 bg-blue-100 mt-1.5 group-last:hidden"></span></div>
+						<div class="pb-10 group-last:pb-0">
+							<div class="text-[13px] font-bold text-blue-700">Feb 2015 — Aug 2016</div>
+							<h3 class="text-lg font-bold mt-1 flex items-center gap-2 flex-wrap">WordPress Team Leader
+								<span class="text-slate-500 font-medium text-[15px] inline-flex items-center gap-2">·
+									<picture class="flex-none"><source srcset="./assets/companies/the_white_label_agency.webp" type="image/webp"><img class="block size-5 object-contain rounded" src="./assets/companies/the_white_label_agency.jpeg" loading="lazy" alt=""></picture>The White Label Agency · Odesa</span>
+							</h3>
+							<ul class="mt-3 flex flex-col gap-1.5 text-slate-600 text-sm max-w-[620px]">
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>Ensured on&#8209;time delivery and quality standards</li>
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>Trained new developers</li>
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>Built WordPress and WooCommerce sites from scratch</li>
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>Improved team workflows</li>
+							</ul>
+						</div>
+					</div>
+
+					<div class="grid grid-cols-[20px_1fr] gap-5 group">
+						<div class="flex flex-col items-center"><span class="size-3 rounded-full bg-blue-700 ring-4 ring-blue-100 mt-1.5 flex-none"></span><span class="w-0.5 flex-1 bg-blue-100 mt-1.5 group-last:hidden"></span></div>
+						<div class="pb-10 group-last:pb-0">
+							<div class="text-[13px] font-bold text-blue-700">Mar 2013 — Feb 2015</div>
+							<h3 class="text-lg font-bold mt-1 flex items-center gap-2 flex-wrap">WordPress Developer
+								<span class="text-slate-500 font-medium text-[15px] inline-flex items-center gap-2">·
+									<picture class="flex-none"><source srcset="./assets/companies/beetroot.webp" type="image/webp"><img class="block size-5 object-contain rounded" src="./assets/companies/beetroot.jpeg" loading="lazy" alt=""></picture>Beetroot · Odesa</span>
+							</h3>
+							<ul class="mt-3 flex flex-col gap-1.5 text-slate-600 text-sm max-w-[620px]">
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>PSD → responsive WordPress themes</li>
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>Multisite and multilingual websites</li>
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>WooCommerce stores</li>
+								<li class="flex gap-2.5"><span class="mt-[9px] size-1.5 rounded-full bg-blue-700 flex-none"></span>Migrations to WordPress, child themes and plugin customization</li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<!-- Contact -->
+			<section id="contact" class="bg-white border border-slate-200 rounded-[18px] p-6 grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] gap-10 lg:p-9">
+				<div>
+					<h2 class="mb-3 text-[32px] font-extrabold tracking-tight leading-tight">Let’s work together</h2>
+					<p class="text-slate-600">Ready to bring your WordPress project to life?</p>
+					<p class="mb-5 text-slate-600">I'll handle it from scratch to launch.</p>
+					<div class="flex flex-col gap-2 text-sm font-semibold">
+						<a href="https://www.upwork.com/freelancers/~01f40ed9d47ad4a604" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:text-blue-600 transition-colors">Upwork profile ↗</a>
+						<a href="https://github.com/DenisStetsenko/" target="_blank" rel="noopener noreferrer" class="text-blue-700 hover:text-blue-600 transition-colors">GitHub ↗</a>
+					</div>
+				</div>
+
+				<form
+						x-data="{ success: false, error: false }"
+						@submit.prevent="
+							fetch('https://formspree.io/f/mdkwoqjj', {
+								method: 'POST',
+								body: new FormData($el),
+								headers: { Accept: 'application/json' }
+							})
+							.then(response => {
+								if (response.ok) {
+									success = true; error = false;
+									$el.reset()
+								} else {
+									error = true; success = false;
+								}
+							})
+							.catch(() => {
+								error = true; success = false;
+							})
+						"
+						class="flex flex-col gap-2.5">
+					<label for="formspree_name" class="sr-only">Your name</label>
+					<input type="text" name="name" id="formspree_name" autocomplete="name" required placeholder="Your name"
+					       class="px-3.5 py-3 border border-slate-300 rounded-[10px] bg-slate-50 text-sm outline-none transition-colors focus:border-blue-700 focus:ring-2 focus:ring-blue-100">
+					<label for="formspree_email" class="sr-only">Your email</label>
+					<input type="email" name="email" id="formspree_email" autocomplete="email" required placeholder="Your email"
+					       class="px-3.5 py-3 border border-slate-300 rounded-[10px] bg-slate-50 text-sm outline-none transition-colors focus:border-blue-700 focus:ring-2 focus:ring-blue-100">
+					<label for="formspree_message" class="sr-only">Message</label>
+					<textarea name="message" id="formspree_message" rows="4" required placeholder="Message"
+					          class="px-3.5 py-3 border border-slate-300 rounded-[10px] bg-slate-50 text-sm resize-y outline-none transition-colors focus:border-blue-700 focus:ring-2 focus:ring-blue-100"></textarea>
+
+					<p x-show="success" x-cloak role="status" class="text-green-700 text-sm text-center">Message sent successfully!</p>
+					<p x-show="error" x-cloak role="alert" class="text-red-600 text-sm text-center">Something went wrong. Please try again.</p>
+
+					<button type="submit" class="bg-yellow-400 hover:bg-yellow-500 text-yellow-950 font-extrabold py-3 rounded-[10px] cursor-pointer transition-colors">Send message</button>
+				</form>
+			</section>
+
+			<footer class="text-[13px] text-slate-500">© <span x-data x-text="new Date().getFullYear()">2026</span> Denys Stetsenko. All rights reserved.</footer>
+
+		</main>
+	</div>
+
+	<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.15.0/dist/cdn.min.js"></script>
+</body>
+</html>
